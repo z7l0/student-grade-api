@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0">
-<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-<parent>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-parent</artifactId>
-<version>3.2.0</version>
-</parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.0</version>
+    </parent>
 
-<groupId>com.example</groupId>
-<artifactId>student-grade-api</artifactId>
-<version>1.0.0</version>
+    <groupId>com.example</groupId>
+    <artifactId>student-grade-api</artifactId>
+    <version>1.0.0</version>
 
-<properties>
-<java.version>17</java.version>
-<sonar.organization>YOUR-SONAR-ORG</sonar.organization>
-<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-<sonar.projectKey>YOUR-SONAR-PROJECT-KEY</sonar.projectKey>
-</properties>
+    <properties>
+        <java.version>17</java.version>
+        <sonar.organization>z7l0</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.projectKey>student-grade-api</sonar.projectKey>
+    </properties>
 
-<dependencies>
+    <dependencies>
+        <!-- Web + exclude default logging -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-web</artifactId>
-<exclusions>
-<exclusion>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-logging</artifactId>
-</exclusion>
-</exclusions>
-</dependency>
+        <!-- Tests -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-test</artifactId>
-<scope>test</scope>
-</dependency>
+        <!-- SLF4J + Log4j2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+    </dependencies>
 
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-log4j2</artifactId>
-</dependency>
-
-</dependencies>
-
-<build>
-<plugins>
-<plugin>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-maven-plugin</artifactId>
-</plugin>
-</plugins>
-</build>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
