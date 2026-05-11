@@ -14,12 +14,15 @@
 
     <properties>
         <java.version>17</java.version>
+
+        <!-- SonarCloud Configuration -->
         <sonar.organization>z7l0</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.projectKey>student-grade-api</sonar.projectKey>
+        <sonar.projectKey>z7l0_student-grade-api</sonar.projectKey>
     </properties>
 
     <dependencies>
+
         <!-- Web + exclude default logging -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,6 +47,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -54,4 +58,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
