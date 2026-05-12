@@ -45,3 +45,4 @@ public class StudentController {
         return Map.of("status",  "UP");
     }
 }
+// sonar update test
