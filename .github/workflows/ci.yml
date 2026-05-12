@@ -26,10 +26,13 @@ jobs:
       - name: Build and test with Maven
         run: mvn --batch-mode clean verify
 
-      - name: SonarQube Cloud scan
+      - name: SonarCloud Scan
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn --batch-mode sonar:sonar
+        run: mvn --batch-mode sonar:sonar \
+          -Dsonar.projectKey=z7l0_student-grade-api \
+          -Dsonar.organization=z7l0 \
+          -Dsonar.host.url=https://sonarcloud.io
 
       - name: Log in to Docker Hub
         if: github.event_name == 'push'
